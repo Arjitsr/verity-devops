@@ -35,12 +35,7 @@ pipeline {
                 sh 'mvn test'
             }
         }
-		//Code starts for jacoco
-        stage('jacoco') {
-            steps {
-                sh 'mvn jacoco:report'
-            }
-        }
+		
 	//Code starts for stage JaCoCo
 		stage('JaCoCo') {
             steps {
@@ -84,7 +79,7 @@ pipeline {
 		stage('System Test') {
             steps {
 				//Change git url below as per your forked github repository URL
-				git url: 'https://github.com/Arjitsr/verity-devops'
+				git url: 'https://github.com/Arjitsr/EMSystemTests'
             	sh 'mvn -Dtest=ExpenseManagerSystemTest test'
             }
         }
